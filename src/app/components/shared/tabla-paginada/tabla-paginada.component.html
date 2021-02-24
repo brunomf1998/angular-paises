@@ -1,0 +1,29 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Bandera</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Capital</th>
+            <th scope="col">Región</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pais of paises | slice: (page-1) * pageSize : page * pageSize">
+            <td><a routerLink="/paises/{{pais.alpha2Code | lowercase}}"><img [src]="pais.flag" class="img-thumb border border-secondary"></a></td>
+            <td>{{ pais.name }}</td>
+            <td>{{ pais.capital }}</td>
+            <td>{{ pais.region }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="d-flex justify-content-center mt-4">
+    <ngb-pagination 
+        [(page)]="page" 
+        [pageSize]="pageSize" 
+        [collectionSize]="paises.length" 
+        [maxSize]="10" 
+        [ellipses]="false"
+        [boundaryLinks]="true">
+    </ngb-pagination>
+</div>

@@ -1,0 +1,72 @@
+<div class="container my-5">
+
+    <app-loading *ngIf="loading"></app-loading>
+
+    <div *ngIf="!loading">
+        <h1 class="display-3 text-center">{{ pais.name }}</h1>
+        <hr>
+        <div class="row justify-content-center">
+            <img class="w-25" [src]="pais.flag" alt="">
+        </div>
+    
+        <div class="row justify-content-center my-3">
+            <div class="card" style="width: 30rem;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col fw-bold">Capital</div>
+                            <div class="col">{{ pais.capital }}</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col fw-bold">Región</div>
+                            <div class="col">{{ pais.region }}</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col fw-bold">Subregión</div>
+                            <div class="col">{{ pais.subregion }}</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col fw-bold">Población</div>
+                            <div class="col">{{ pais.population }}</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col fw-bold">Área</div>
+                            <div class="col">{{ pais.area }}</div>
+                        </div>
+                    </li>
+                        
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col fw-bold">Idioma(s)</div>
+                            <div class="col">
+                                <p class="mb-0" *ngFor="let item of pais.languages">{{ item.name }}</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col fw-bold">Zona(s) horaria</div>
+                            <div class="col">
+                                <p class="mb-0" *ngFor="let item of pais.timezones">{{ item }}</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col fw-bold">Nombre nativo</div>
+                            <div class="col">{{ pais.nativeName }}</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
