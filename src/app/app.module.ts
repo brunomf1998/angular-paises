@@ -12,6 +12,10 @@ import { TablaPaginadaComponent } from './components/shared/tabla-paginada/tabla
 import { RegionsComponent } from './components/regions/regions.component';
 import { CountryComponent } from './components/country/country.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { CountriesComponent } from './components/countries/countries.component';
+import { FindComponent } from './components/find/find.component';
+import { SearchComponent } from './components/shared/search/search.component';
+
 
 @NgModule({
   declarations: [
@@ -21,13 +25,16 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     TablaPaginadaComponent,
     RegionsComponent,
     CountryComponent,
-    LoadingComponent
+    LoadingComponent,
+    CountriesComponent,
+    SearchComponent,
+    FindComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgbModule,
-    RouterModule.forRoot(ROUTES, {useHash: true})
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]

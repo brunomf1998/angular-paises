@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RestCountriesService } from '../../services/rest-countries.service';
 
@@ -11,6 +11,8 @@ export class RegionsComponent {
   page: number;
   pageSize: number;
   paises: any;
+  loading = true;
+
   constructor(private router: ActivatedRoute, private restCountriesService: RestCountriesService) {
     this.page = 1;
     this.pageSize = 10;
@@ -22,6 +24,7 @@ export class RegionsComponent {
   getForRegion = (region: string) => {
     this.restCountriesService.getForRegion(region).subscribe(paisesAfrica => {
       this.paises = paisesAfrica;
+      this.loading = false;
     });
   }
 

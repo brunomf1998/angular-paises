@@ -5,7 +5,6 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RestCountriesService {
-
   constructor(private http: HttpClient) { }
 
   getQuery = (query: string) => {
