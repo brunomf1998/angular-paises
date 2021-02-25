@@ -1,3 +1,8 @@
-<p *ngFor="let country of countries">
-    {{country.name}}
-</p>
+<div class="container my-5">
+    <app-loading *ngIf="loading"></app-loading>
+    <app-tabla-paginada [paises]="countries" [page]="1" [pageSize]="10" *ngIf="!loading && isValid"></app-tabla-paginada>
+    <div *ngIf="!isValid" class="text-center">
+        <h4>No se ha encontrado ningún resultado para "{{ term }}"</h4>
+        <h5>Por favor, asegúrate de que las palabras estén correctamente escritas o prueba con menos palabras o con otras distintas.</h5>
+    </div>
+</div>

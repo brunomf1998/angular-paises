@@ -11,7 +11,7 @@ export class RegionsComponent {
   page: number;
   pageSize: number;
   paises: any;
-  loading = true;
+  loading = false;
 
   constructor(private router: ActivatedRoute, private restCountriesService: RestCountriesService) {
     this.page = 1;
